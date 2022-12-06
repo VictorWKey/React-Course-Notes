@@ -70,9 +70,8 @@ import heroes, { owners } from './data/heroes';
 promises.then( res => console.log(res)).catch(err => console.log( err ));
 promises.then( console.log ).catch( console.log );
 
+
 "OPERADOR TERNARIO"
-
-
 
 const activo = true;
 
@@ -80,3 +79,34 @@ const mensaje = activo && 'Activo'; // mensaje = 'Activo' // Estos una manera un
 const mensaje2 = !activo && 'Activo'; // mensaje = false;
 const mensaje3 = ( activo ) ? 'Activo' : 'Inactivo';
 
+
+"COMPONENTE"
+
+// Pequeña pieza de codigo encapsulada re-utilizable que puede tener estado o no.
+// El estado es como se encuentra la informacion del componente en un punto determinado del tiempo
+
+
+"FRAGMENT"
+
+import { Fragment } from "react";
+
+export const FirstApp = () => {
+    return (
+        <Fragment> 
+            <h1>First App</h1>
+            <h2>Im a subtitle</h2>
+        </Fragment>
+    );
+} 
+// El Fragment nos sirve para meter elementos dentro de el y que los elementos dentro de el no tengan un padre, ya que para retornar varios elementos, es necesario que tenga un padre
+
+//----------------------------------
+export const FirstApp = () => {
+    return (
+        <> 
+            <h1>First App</h1>
+            <h2>Im a subtitle</h2>
+        </>
+    );
+} 
+// Esto es equivalente al codigo anterior
