@@ -105,8 +105,52 @@ export const FirstApp = () => {
     return (
         <> 
             <h1>First App</h1>
-            <h2>Im a subtitle</h2>
+            <h2>Im ubtitle</h2>
         </>
     );
 } 
 // Esto es equivalente al codigo anterior
+
+
+
+"INTRODUCCION A LAS PRUEBAS UNITARIAS Y DE INTEGRACION"
+
+// Unitarias: enfocadas en pequeñas funcionalidades
+// Integracion: enfocadas en como funcionan varias piezas en conjunto
+// Son faciles de escribir, leer, confiables, rapidas y principalmente unitarias
+
+// AAA: Arrange (Arreglar), Act (Actuar), Assert (Afirmar)
+// Arrange: Preparamos el estado inicial. Inicializamos variables e importaciones necesarias
+// Act: Aplicamos acciones y estimulos al sujeto de pruebas. Llamar metodos, simular clicks, realizar acciones sobre el paso anterior
+// Assert: Observar el comportamiento resultante. Son los resultados esperados, ej: que algo cambie, algo incremente o nada suceda 
+
+// No aseguran que la aplicacion no tenga errores
+// Pueden no funcionar
+// No es necesario probar TODO
+
+
+
+"---------JEST--------"
+
+// Es una dependencia de desarrollo que nos sirve para hacer testing
+
+{
+    "scripts": {
+        "test": "jest --watchAll"
+      }
+}
+
+// npm install -D @types/jest // Para tener el intellisense 
+
+// Para que JEST pueda hacer test con codigo moderno de JavaScript, debemos utilizar babel, instalandolo:
+// npm install --save-dev babel-jest @babel/core @babel/preset-env
+// caso de ver el error "You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously". Cambiar extensión de los archivos jest.config.js y babel.config.js a .cjs
+// Cuando jest corre un test, primero evaluara que en el archivo donde proviene lo exportado y utilizado este bien. Si todo esta bien, entonces procedera a correr el test como tal y lo va evaluar dependiendo de lo que hayamos puesto en el expectcaso de ver el error "You appear to be using a native ECMAScript module configuration file, which is only supported when running Babel asynchronously."Cambiar extensión de los archivos jest.config.js y babel.config.js a .cjs
+
+// expect(received).toEqual(expeced). // Basicamente se leeria como, se espera que este valor recibido sea igual a este otro valor esperado
+// Cuando hacemos el testing, nos devolvera el objeto que estamos comparando. Dependiendo del color, las propiedades perteneceran al valor recibido o esperado, y los que estan de color significa que tiene una propiedad de mas o diferente con respecto al otro
+
+// Se usa el toEqual cuando se quiere evaluar la iguald de condiciones (deep quality)
+// Puede aprenderte esto solo pensando que el toBe compara todos los tipos de valores primarios, mientras que el toEqual compara las condiciones, es decir cuando ya es un objeto, arreglo o typeof
+
+expect( hero ).toBeFalsy(); // Esperara un valor null, undefined o false
